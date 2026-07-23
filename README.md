@@ -11,30 +11,22 @@ The path to data must then be specified in the file /figures/figures.py.
 The paper-specific scripts are in `figures` and `scripts`. Other folders contain various
 functions to analyze trajectories, manipulate movies, make user interfaces, etc.
 
-
+```
 figures/
-
     fig*/
-
         All scripts to generate figures.
-
     figures.py
-
         Functions to make bar plots and calculate statistics.
         IMPORTANT: the variable data_path stores the path to the data, it must be specified.
 
 interface/
-
     Various functions for user interfaces.
 
 movie/
-
     Classes to manipulate movie files.
 
 scripts/
-
     beating/
-
         Analysis of ciliary beating.
         batch_frequency_map.py
             Calculates the main beating frequency at all positions in a set of movie files (.tiff).
@@ -80,3 +72,4 @@ trajectories/
         Many functions to analyze trajectories.
     visualization.py
         Plotting trajectories.
+```
