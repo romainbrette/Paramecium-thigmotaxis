@@ -1,5 +1,8 @@
 # Paramecium-thigmotaxis
-These are scripts to analyze data and produce the figures of the paper.
+These are scripts to analyze data and produce the figures of the following paper:
+Active control of surface attachment by Paramecium
+Ali Hosseini, Wilder Boyden, Célia Fosse, Marcel Stimberg, Robert D. Guy, Romain Brette
+Corresponding author: Romain Brette, romain.brette@inserm.fr
 
 Data must first be downloaded on Zenodo.
 The path to data must then be specified in the file /figures/figures.py.
