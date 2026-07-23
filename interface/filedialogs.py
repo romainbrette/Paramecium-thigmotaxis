@@ -8,76 +8,12 @@ import os
 import tkinter as tk
 from tkinter import filedialog
 from optparse import OptionParser
-from movie import *
 import glob
 from interface.command_line import guess_fps_and_pixelsize
 from tkinter import simpledialog
 import imageio
 
-__all__ = ['ask_open_movie', 'ask_open_tracking_file', 'ask_open_movie_and_tracking', 'ask_open_image',
-           'ask_open_movie_and_tracking_and_fps_and_pixelsize', 'guess_tracking_file', 'guess_or_ask_fps_and_pixelsize']
-
-def ask_open_movie(initialdir=None, guess=True):
-    '''
-    Dialog to choose a movie. Can be image files or movie.
-    Returns Movie object.
-    '''
-    parser = OptionParser()
-    parser.add_option('--dir', dest='dir', help='initial directory', default=os.path.expanduser('~/Downloads'))
-    (options, args) = parser.parse_args()
-    initialdir = initialdir or options.dir
-
-    root = tk.Tk()
-    root.withdraw()  # Hide the main window
-    filename = filedialog.askopenfilename(initialdir=initialdir, title='Choose a movie',
-                                          filetypes=[
-                                              ("Movies", "*.mp4 *.avi *.czi"),
-                                              ("Images", "*.tif *.tiff *.png *.jpg")
-                                          ])
-    root.destroy()
-
-    # Check if it's an image or a movie
-    ext = os.path.splitext(filename)[1]
-    if (ext=='.mp4') or (ext=='.avi'):
-        movie = MovieFile(filename)
-    elif (ext=='.czi'):
-        movie = CZIMovie(filename)
-    else:
-        movie = MovieFolder(os.path.dirname(filename))
-
-    # Get FPS and pixel size
-    if guess:
-        fps, pixelsize = guess_fps_and_pixelsize(movie.filename)
-    else:
-        fps, pixelsize = None, None
-    movie.fps = movie.fps or fps
-    movie.pixel_size = movie.pixel_size or pixelsize
-
-    return movie
-
-def ask_open_image(initialdir=None):
-    '''
-    Dialog to choose a movie. Can be image files or movie.
-    Returns Movie object.
-    '''
-    parser = OptionParser()
-    parser.add_option('--dir', dest='dir', help='initial directory', default=os.path.expanduser('~/Downloads'))
-    (options, args) = parser.parse_args()
-    initialdir = initialdir or options.dir
-
-    root = tk.Tk()
-    root.withdraw()  # Hide the main window
-    filename = filedialog.askopenfilename(initialdir=initialdir, title='Choose an image',
-                                          filetypes=[
-                                              ("Images", "*.tif *.tiff *.png *.jpg")
-                                          ])
-    root.destroy()
-
-    # Get FPS and pixel size
-    #fps, pixelsize = guess_fps_and_pixelsize(filename)
-    image = imageio.imread(filename)
-
-    return image
+__all__ = ['ask_open_tracking_file', 'guess_tracking_file', 'guess_or_ask_fps_and_pixelsize']
 
 def ask_open_tracking_file(initialdir=None, title='Choose a tracking file'):
     '''
@@ -99,18 +35,6 @@ def ask_open_tracking_file(initialdir=None, title='Choose a tracking file'):
     root.destroy()
 
     return filename
-
-def ask_open_movie_and_tracking():
-    '''
-    Dialogs to choose a movie and then a tracking file.
-    Returns Movie object and tracking file.
-    '''
-    movie = ask_open_movie()
-    path = movie.filename
-    if not os.path.isdir(path):
-        path = os.path.dirname(path)  # in the directory of the path
-    tracking = ask_open_tracking_file(initialdir=path)
-    return movie, tracking
 
 class PixelsizeFPSDialog(simpledialog.Dialog):
     def __init__(self, parent, title=None, default_fps=20.0, default_pixelsize=5.):
@@ -138,24 +62,6 @@ class PixelsizeFPSDialog(simpledialog.Dialog):
     def apply(self):
         # Retrieve the entered values when OK is clicked
         self.fps, self.pixelsize = float(self.fps_entry.get()), float(self.pixelsize_entry.get())
-
-def ask_open_movie_and_tracking_and_fps_and_pixelsize():
-    '''
-    Dialogs to choose a movie and then a tracking file, and then FPS and pixel size.
-    Returns Movie object, tracking file, fps and pixel size.
-    '''
-    movie, tracking = ask_open_movie_and_tracking()
-    if (movie.fps is None) or (movie.pixel_size is None):
-        # Dialog
-        root = tk.Tk()
-        root.withdraw()  # Hide the main window
-
-        # Create and show the custom dialog
-        dialog = PixelsizeFPSDialog(root, "Enter FPS and pixel size")
-        movie.fps = dialog.fps
-        movie.pixel_size = dialog.pixelsize
-
-    return movie, tracking
 
 def guess_or_ask_fps_and_pixelsize(filename):
     fps, pixel_size = guess_fps_and_pixelsize(filename)
@@ -186,6 +92,3 @@ def guess_tracking_file(path):
             return filename
         else:
             return None
-
-if __name__ == '__main__':
-    ask_open_movie_and_tracking_and_fps_and_pixelsize()

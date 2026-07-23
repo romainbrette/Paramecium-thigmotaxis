@@ -4,6 +4,11 @@ Figure making
 from pylab import *
 from stats import welch_binomial
 
+#######################################
+# CHANGE THIS TO THE ACTUAL DATA PATH #
+#######################################
+data_path = "/Volumes/DDRomain/Paramecium/Thigmotaxis/Zenodo"
+
 def bars_proportions(ax, *conditions, verbose=True):
     '''
     Makes a plot with bars showing proportions of cells.

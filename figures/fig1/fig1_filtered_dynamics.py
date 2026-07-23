@@ -5,8 +5,8 @@ from figures.figures import *
 import os
 import pandas as pd
 
-filename_filtered = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/2025_10_14__Log_3h__picked_in_filtered_culture_medium_4h_post_seed/tracking/count.tsv'
-filename_control = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/2025_10_14__Log_3h__picked_in_filtered_culture_medium_4h_post_seed/tracking/count2.tsv'
+filename_filtered = os.path.join(data_path, 'Dynamics/Log cells in filtered medium/count.tsv')
+filename_control = os.path.join(data_path, 'Dynamics/Log cells in filtered medium/count2.tsv')
 output_fig = os.path.expanduser('~/Downloads/fig1_filtered_dynamics.pdf')
 
 figsize = (3, 2)

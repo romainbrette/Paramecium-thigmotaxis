@@ -5,8 +5,8 @@ from figures.figures import *
 import os
 import pandas as pd
 
-filename_log = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/04_411/01_LOG_STAT_2h/01_LOG_2h___411___800_cell_ml___20ul_drop___520um_coverslips/background_removed/tracking/count.tsv'
-filename_stat = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/04_411/01_LOG_STAT_2h/02_STAT_2h___411___6900_cell_ml___25ul_drop___520um_coverslip/background_removed/tracking/count.tsv'
+filename_log = os.path.join(data_path, 'Dynamics/Ca-K solution - glass - log/count.tsv')
+filename_stat = os.path.join(data_path, 'Dynamics/Ca-K solution - glass - stationary/count.tsv')
 output_fig = os.path.expanduser('~/Downloads/fig2_411_2h.pdf')
 
 figsize = (2, 2)

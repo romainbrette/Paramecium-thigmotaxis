@@ -2,9 +2,11 @@
 Measure cell growth in 10 uM RR vs. control
 '''
 from figures.figures import *
+import pandas as pd
+import os
 
-filename_RR = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/05_Ca/02_LOG_Ruthenium_Red___L_Control__R_ruthenium_red_10uM___Petri_cap/Tracking/count2.tsv'
-filename_control = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/05_Ca/02_LOG_Ruthenium_Red___L_Control__R_ruthenium_red_10uM___Petri_cap/Tracking/count.tsv'
+filename_RR = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count2.tsv')
+filename_control = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count.tsv')
 
 # Read data
 data_RR = pd.read_csv(filename_RR, sep='\t')

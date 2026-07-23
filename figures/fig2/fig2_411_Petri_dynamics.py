@@ -5,8 +5,8 @@ from figures.figures import *
 import os
 import pandas as pd
 
-filename_log = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/03_phase/01_LOG_STAT_same_culture/01_LOG___411___1000_cell_ml___Petri_cap/tracking/count.tsv'
-filename_stat = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/03_phase/01_LOG_STAT_same_culture/02_STAT___411___4700_cell_ml___Petri_cap/tracking/count.tsv'
+filename_log = os.path.join(data_path, 'Dynamics/Ca-K solution - Petri dish - log/count.tsv')
+filename_stat = os.path.join(data_path, 'Dynamics/Ca-K solution - Petri dish - stationary/count.tsv')
 output_fig = os.path.expanduser('~/Downloads/fig2_411_Petri.pdf')
 
 figsize = (3, 2)

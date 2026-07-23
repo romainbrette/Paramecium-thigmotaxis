@@ -5,8 +5,8 @@ from figures.figures import *
 import os
 import pandas as pd
 
-filename_RR = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/05_Ca/02_LOG_Ruthenium_Red___L_Control__R_ruthenium_red_10uM___Petri_cap/Tracking/count2.tsv'
-filename_control = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/05_Ca/02_LOG_Ruthenium_Red___L_Control__R_ruthenium_red_10uM___Petri_cap/Tracking/count.tsv'
+filename_RR = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count2.tsv')
+filename_control = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count.tsv')
 output_fig = os.path.expanduser('~/Downloads/fig3_RR_2h.pdf')
 
 figsize = (2, 2)

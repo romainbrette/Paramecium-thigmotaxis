@@ -4,8 +4,9 @@ Distribution of attachment duration in log cells in culture medium.
 import os
 from trajectories.magic_loading import *
 from trajectories.linking import *
+from figures.figures import *
 
-filename = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/01_culture_medium/ON_GLASS_COVERSLIPS/01_LOG_2h___culture_medium___2000_cell_ml___glass_slide_520um/backgrounds/background_removed/tracking/tracking_linked_20.0_fps_1_um.tsv'
+filename = os.path.join(data_path, 'Dynamics/Log cells in culture medium/background/tracking_linked_20.0_fps_1_um.tsv')
 output_fig = os.path.expanduser('~/Downloads/fig1_attachment_duration.pdf')
 
 figsize = (3, 2)

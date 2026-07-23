@@ -5,9 +5,9 @@ import os
 from trajectories.magic_loading import *
 from interface import *
 import matplotlib.pyplot as plt
+from figures.figures import *
 
-#filename_count = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/01_culture_medium/ON_GLASS_COVERSLIPS/01_LOG_2h___culture_medium___2000_cell_ml___glass_slide_520um/tracking/count.tsv'
-filename = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/01_culture_medium/ON_GLASS_COVERSLIPS/01_LOG_2h___culture_medium___2000_cell_ml___glass_slide_520um/tracking/tracking_linked_with_features_20.0_fps_1_um.tsv'
+filename = os.path.join(data_path, 'Dynamics/Log cells in culture medium/tracking_linked_with_features_20.0_fps_1_um.tsv')
 output_fig = os.path.expanduser('~/Downloads/fig1_speed.pdf')
 
 figsize = (2, 2)

@@ -5,10 +5,10 @@ from figures.figures import *
 import os
 import pandas as pd
 
-filename_log_glass = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/04_411/01_LOG_STAT_2h/01_LOG_2h___411___800_cell_ml___20ul_drop___520um_coverslips/background_removed/tracking/count.tsv'
-filename_stat_glass = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/04_411/01_LOG_STAT_2h/02_STAT_2h___411___6900_cell_ml___25ul_drop___520um_coverslip/background_removed/tracking/count.tsv'
-filename_log_Petri = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/03_phase/01_LOG_STAT_same_culture/01_LOG___411___1000_cell_ml___Petri_cap/tracking/count.tsv'
-filename_stat_Petri = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/03_phase/01_LOG_STAT_same_culture/02_STAT___411___4700_cell_ml___Petri_cap/tracking/count.tsv'
+filename_log_glass = os.path.join(data_path, 'Dynamics/Ca-K solution - glass - log/count.tsv')
+filename_stat_glass = os.path.join(data_path, 'Dynamics/Ca-K solution - glass - stationary/count.tsv')
+filename_log_Petri = os.path.join(data_path, 'Dynamics/Ca-K solution - Petri dish - log/count.tsv')
+filename_stat_Petri = os.path.join(data_path, 'Dynamics/Ca-K solution - Petri dish - stationary/count.tsv')
 
 output_fig = os.path.expanduser('~/Downloads/fig2_bars.pdf')
 

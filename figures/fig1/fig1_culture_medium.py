@@ -5,7 +5,7 @@ from figures.figures import *
 import os
 import pandas as pd
 
-filename = '/Volumes/DDRomain/Paramecium/Thigmotaxis/DATA/02___0.5x___with_tracking/01_culture_medium/ON_GLASS_COVERSLIPS/01_LOG_2h___culture_medium___2000_cell_ml___glass_slide_520um/tracking/count.tsv'
+filename = os.path.join(data_path, 'Dynamics/Log cells in culture medium/count.tsv')
 output_fig = os.path.expanduser('~/Downloads/fig1_culture_medium.pdf')
 
 figsize = (2, 2)
