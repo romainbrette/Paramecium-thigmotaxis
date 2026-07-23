@@ -1,6 +1,8 @@
 # Paramecium-thigmotaxis
 These are scripts to analyze data and produce the figures of the following paper:
+
 Active control of surface attachment by Paramecium
+
 Ali Hosseini, Wilder Boyden, Célia Fosse, Marcel Stimberg, Robert D. Guy, Romain Brette
 Corresponding author: Romain Brette, romain.brette@inserm.fr
 
@@ -11,20 +13,28 @@ functions to analyze trajectories, manipulate movies, make user interfaces, etc.
 
 
 figures/
+
     fig*/
+
         All scripts to generate figures.
+
     figures.py
+
         Functions to make bar plots and calculate statistics.
         IMPORTANT: the variable data_path stores the path to the data, it must be specified.
 
 interface/
+
     Various functions for user interfaces.
 
 movie/
+
     Classes to manipulate movie files.
 
 scripts/
+
     beating/
+
         Analysis of ciliary beating.
         batch_frequency_map.py
             Calculates the main beating frequency at all positions in a set of movie files (.tiff).
