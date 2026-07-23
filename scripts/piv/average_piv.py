@@ -3,8 +3,6 @@ PIV analysis, averaged across time
 (Particle Image Velocimetry)
 
 !!! in openpiv 0.21.2, y is flipped (y[::-1]), in the current version it's not...
-
-Works better without extended search. I don't get why.
 '''
 import openpiv.pyprocess
 import os

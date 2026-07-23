@@ -10,6 +10,7 @@ from tkinter import filedialog
 import matplotlib
 matplotlib.use('TkAgg')
 from pylab import *
+import os
 
 root = tk.Tk()
 root.withdraw()  # Hide the main window
