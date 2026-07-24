@@ -1,27 +1,29 @@
 '''
-Maximum attachment in Na+ vs. control (411), glass.
+Maximum attachment in culture medium with varying EGTA concentration.
 '''
 from figures.figures import *
 import os
 import pandas as pd
 
-filename_RR = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count2.tsv')
-filename_control = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count.tsv')
+filename_control = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus EGTA/0.4 mM EGTA vs control/count2.tsv')
+filename_037_EGTA = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus EGTA/0.38 mM vs. 0.37 mM vs. 0.32 mM EGTA/count2.tsv')
+filename_032_EGTA = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus EGTA/0.38 mM vs. 0.37 mM vs. 0.32 mM EGTA/count.tsv')
 
-output_fig = os.path.expanduser('~/Downloads/fig3_bars_RR.pdf')
+output_fig = os.path.expanduser('~/Downloads/fig_bars_EGTA.pdf')
 
 figsize = (2, 2)
-
-# Read data
-RR = pd.read_csv(filename_RR, sep='\t')
-control = pd.read_csv(filename_control, sep='\t')
 
 # 5 min rolling average
 dt_Petri = 200/20.
 window_size = int(300/dt_Petri)+1 # 5 min
 
-RR['attached'] = RR['attached'].rolling(window=window_size, center=True).mean()
-RR['swimming'] = RR['swimming'].rolling(window=window_size, center=True).mean()
+# Read data
+control = pd.read_csv(filename_control, sep='\t')
+EGTA_032 = pd.read_csv(filename_032_EGTA, sep='\t')
+EGTA_037 = pd.read_csv(filename_037_EGTA, sep='\t')
+
+EGTA_037['attached'] = EGTA_037['attached'].rolling(window=window_size, center=True).mean()
+EGTA_037['swimming'] = EGTA_037['swimming'].rolling(window=window_size, center=True).mean()
 
 control['attached'] = control['attached'].rolling(window=window_size, center=True).mean()
 control['swimming'] = control['swimming'].rolling(window=window_size, center=True).mean()
@@ -39,7 +41,8 @@ def max_attachment(data):
 # Plot
 fig, ax = plt.subplots(figsize=figsize)
 
-bars_proportions_with_p(ax, ('RR', *max_attachment(RR)),
+print(max_attachment(EGTA_037))
+bars_proportions_with_p(ax, ('EGTA', *max_attachment(EGTA_037)),
                             ('control', *max_attachment(control))
                             )
 
