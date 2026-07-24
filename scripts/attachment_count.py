@@ -18,6 +18,7 @@ from trajectories.linking import *
 import logging
 import yaml
 from interface import *
+import pandas as pd
 
 logging.basicConfig(level=logging.WARNING)
 
