@@ -7,7 +7,7 @@ Ali Hosseini, Wilder Boyden, Célia Fosse, Marcel Stimberg, Robert D. Guy, Romai
 
 Corresponding author: Romain Brette, romain.brette@inserm.fr
 
-Data must first be downloaded from Zenodo.
+Data must first be downloaded from Zenodo (https://zenodo.org/uploads/21509306).
 The path to data must then be specified in the file /figures/figures.py.
 The paper-specific scripts are in `figures` and `scripts`. Other folders contain various
 functions to analyze trajectories, manipulate movies, make user interfaces, etc.
