@@ -1,13 +1,13 @@
 # Paramecium-thigmotaxis
 These are scripts to analyze data and produce the figures of the following paper:
 
-Active control of surface attachment by Paramecium
+Active control of surface immobilization in the foraging behavior of Paramecium
 
 Ali Hosseini, Wilder Boyden, Célia Fosse, Marcel Stimberg, Robert D. Guy, Romain Brette
 
 Corresponding author: Romain Brette, romain.brette@inserm.fr
 
-Data must first be downloaded on Zenodo.
+Data must first be downloaded from Zenodo.
 The path to data must then be specified in the file /figures/figures.py.
 The paper-specific scripts are in `figures` and `scripts`. Other folders contain various
 functions to analyze trajectories, manipulate movies, make user interfaces, etc.

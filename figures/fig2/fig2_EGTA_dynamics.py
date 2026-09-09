@@ -26,12 +26,12 @@ EGTA_037['n'] = EGTA_037['attached'] + EGTA_037['swimming']
 EGTA_037['attached_p'] = EGTA_037['attached']/EGTA_037['n']
 
 # Initial number of swimming cells (first minute)
-# n_control = control[control['t']<60.]['swimming'].mean()
-# n_032 = EGTA_032[EGTA_032['t']<60.]['swimming'].mean()
-# n_037 = EGTA_037[EGTA_037['t']<60.]['swimming'].mean()
-# print('n_control =', n_control)
-# print('n_032 = ', n_032)
-# print('n_037 = ', n_037)
+n_control = control[control['t']<60.]['swimming'].mean()
+n_032 = EGTA_032[EGTA_032['t']<60.]['swimming'].mean()
+n_037 = EGTA_037[EGTA_037['t']<60.]['swimming'].mean()
+print('n_control =', n_control)
+print('n_032 = ', n_032)
+print('n_037 = ', n_037)
 
 # Plot
 fig, ax = plt.subplots(figsize=figsize)

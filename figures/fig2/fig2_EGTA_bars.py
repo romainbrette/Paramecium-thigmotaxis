@@ -42,6 +42,7 @@ def max_attachment(data):
 fig, ax = plt.subplots(figsize=figsize)
 
 print(max_attachment(EGTA_037))
+print(max_attachment(EGTA_037))
 bars_proportions_with_p(ax, ('EGTA', *max_attachment(EGTA_037)),
                             ('control', *max_attachment(control))
                             )
