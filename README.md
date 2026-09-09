@@ -20,6 +20,9 @@ figures/
         Functions to make bar plots and calculate statistics.
         IMPORTANT: the variable data_path stores the path to the data, it must be specified.
 
+hydrodynamics/
+    Matlab code for hydrodynamic simulation.
+
 interface/
     Various functions for user interfaces.
 
