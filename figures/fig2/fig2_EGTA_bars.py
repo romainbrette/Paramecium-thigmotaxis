@@ -9,7 +9,7 @@ filename_control = os.path.join(data_path, 'Dynamics/Log cells in culture medium
 filename_037_EGTA = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus EGTA/0.38 mM vs. 0.37 mM vs. 0.32 mM EGTA/count2.tsv')
 filename_032_EGTA = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus EGTA/0.38 mM vs. 0.37 mM vs. 0.32 mM EGTA/count.tsv')
 
-output_fig = os.path.expanduser('~/Downloads/fig_bars_EGTA.pdf')
+output_fig = os.path.expanduser('~/Downloads/fig2_bars_EGTA.pdf')
 
 figsize = (2, 2)
 

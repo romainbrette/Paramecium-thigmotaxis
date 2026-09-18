@@ -7,9 +7,9 @@ import pandas as pd
 
 filename_log = os.path.join(data_path, 'Dynamics/Ca-K solution - Petri dish - log/count.tsv')
 filename_stat = os.path.join(data_path, 'Dynamics/Ca-K solution - Petri dish - stationary/count.tsv')
-output_fig = os.path.expanduser('~/Downloads/fig2_411_Petri.pdf')
+output_fig = os.path.expanduser('~/Downloads/fig3_411_Petri.pdf')
 
-figsize = (3, 2)
+figsize = (2, 2)
 
 # Read data
 data_log = pd.read_csv(filename_log, sep='\t')
@@ -36,7 +36,7 @@ ax.set_xlabel('Time (h)')
 ax.set_ylabel('Immobile cells (%)')
 ax.set_ylim(0, 100)
 ax.set_xlim(0, 9)
-#ax.set_xticks([0, 60, 120])
+ax.set_xticks([0, 3, 6, 9])
 
 plt.tight_layout()
 plt.savefig(output_fig)

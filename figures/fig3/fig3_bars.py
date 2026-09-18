@@ -10,7 +10,7 @@ filename_stat_glass = os.path.join(data_path, 'Dynamics/Ca-K solution - glass - 
 filename_log_Petri = os.path.join(data_path, 'Dynamics/Ca-K solution - Petri dish - log/count.tsv')
 filename_stat_Petri = os.path.join(data_path, 'Dynamics/Ca-K solution - Petri dish - stationary/count.tsv')
 
-output_fig = os.path.expanduser('~/Downloads/fig2_bars.pdf')
+output_fig = os.path.expanduser('~/Downloads/fig3_bars.pdf')
 
 figsize = (2, 2)
 

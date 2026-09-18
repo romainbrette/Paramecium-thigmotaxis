@@ -7,7 +7,7 @@ import pandas as pd
 
 filename_log = os.path.join(data_path, 'Dynamics/Ca-K solution - glass - log/count.tsv')
 filename_stat = os.path.join(data_path, 'Dynamics/Ca-K solution - glass - stationary/count.tsv')
-output_fig = os.path.expanduser('~/Downloads/fig2_411_2h.pdf')
+output_fig = os.path.expanduser('~/Downloads/fig3_411_2h.pdf')
 
 figsize = (2, 2)
 

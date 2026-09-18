@@ -7,7 +7,7 @@ import pandas as pd
 
 filename_RR = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count2.tsv')
 filename_control = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count.tsv')
-output_fig = os.path.expanduser('~/Downloads/fig3_RR_2h.pdf')
+output_fig = os.path.expanduser('~/Downloads/fig2_RR_2h.pdf')
 
 figsize = (2, 2)
 
