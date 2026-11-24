@@ -1,5 +1,5 @@
 '''
-Swimming speed in culture medium, at t = 1 hour
+Swimming speed in culture medium, at different times
 '''
 import os
 from trajectories.magic_loading import *

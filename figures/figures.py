@@ -8,8 +8,8 @@ import os
 #######################################
 # CHANGE THIS TO THE ACTUAL DATA PATH #
 #######################################
-#data_path = "/Volumes/DDRomain/Paramecium/Thigmotaxis/Zenodo"
-data_path = os.path.expanduser("~/Downloads")
+data_path = "/Volumes/DDRomain/Paramecium/Thigmotaxis/Zenodo"
+#data_path = os.path.expanduser("~/Downloads")
 
 def bars_proportions(ax, *conditions, verbose=True):
     '''

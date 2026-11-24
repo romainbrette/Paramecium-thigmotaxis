@@ -12,6 +12,7 @@ figsize = (2, 2)
 
 # Read data
 data = pd.read_csv(filename, sep='\t')
+data = data[data['t']<3600] # first hour
 data['n'] = data['attached'] + data['swimming']
 data['attached_p'] = data['attached']/data['n']
 
@@ -26,7 +27,7 @@ ax.plot(data['t']/60., 100*data['attached_p'].rolling(window=window_size, center
 ax.set_xlabel('Time (min)')
 ax.set_ylabel('Immobile cells (%)')
 ax.set_ylim(0, 100)
-ax.set_xticks([0, 60, 120])
+ax.set_xticks([0, 30, 60])
 
 plt.tight_layout()
 plt.savefig(output_fig)
