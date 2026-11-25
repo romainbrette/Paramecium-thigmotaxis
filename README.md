@@ -57,6 +57,8 @@ scripts/
         Calculates various features (speed, etc.) from a raw trajectory file.
     play_trajectories.py
         Displays an animation of trajectories from a trajectory file.
+    split_trajectories.py
+        Extracts trajectories in user-specified ROIs.
     swimming_analysis.py
         Shows the number of swimming cells as a function of time, as well as speed and avoiding reaction rate.
     track.py
