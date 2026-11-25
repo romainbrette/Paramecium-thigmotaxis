@@ -7,7 +7,7 @@ import pandas as pd
 
 filename_RR = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count2.tsv')
 filename_control = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/count.tsv')
-output_fig = os.path.expanduser('~/Downloads/fig2_RR_2h.pdf')
+output_fig = os.path.expanduser('~/Downloads/fig2_RR_1h.pdf')
 
 figsize = (2, 2)
 
@@ -28,13 +28,14 @@ ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 
 window_size = 30+1 # times 10 s = 5 min
-ax.plot(data_control['t']/3600., 100*data_control['attached_p'].rolling(window=window_size, center=True).mean(), 'k')
-ax.plot(data_RR['t']/3600., 100*data_RR['attached_p'].rolling(window=window_size, center=True).mean(), color='#1b9e77')
+ax.plot(data_control['t']/60., 100*data_control['attached_p'].rolling(window=window_size, center=True).mean(), 'k')
+ax.plot(data_RR['t']/60., 100*data_RR['attached_p'].rolling(window=window_size, center=True).mean(), color='#1b9e77')
 
-ax.set_xlabel('Time (h)')
+ax.set_xlabel('Time (min)')
 ax.set_ylabel('Immobile cells (%)')
+ax.set_xlim(0, 60)
 ax.set_ylim(0, 100)
-ax.set_xticks([0, 1, 2, 3])
+ax.set_xticks([0, 30, 60])
 
 plt.tight_layout()
 plt.savefig(output_fig)
