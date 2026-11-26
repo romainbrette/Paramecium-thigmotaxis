@@ -37,7 +37,7 @@ ax_hist.yaxis.set_visible(False)
 
 
 for data, color in ((data_control, 'k'), (data_RR, '#1b9e77')):
-    selection = data[(data['frame']*dt>50*60) & (data['frame']*dt<60*60)]
+    selection = data[(data['frame']*dt>60*60) & (data['frame']*dt<65*60)]
     # Mean speed over the 20 previous frames (not including the current and previous ones)
     selection['speed_prev20'] = selection.groupby('id')['speed'].transform(lambda s: s.shift(2).rolling(20, min_periods=20).mean())
 
