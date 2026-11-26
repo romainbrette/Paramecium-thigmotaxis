@@ -7,18 +7,21 @@ from interface import *
 import matplotlib.pyplot as plt
 from figures.figures import *
 
-filename_control = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus EGTA/0.4 mM EGTA vs control/tracking_linked_with_features_20.0_fps_1_um_control.tsv')
-filename_RR = os.path.join(data_path, 'Dynamics/Log cells in culture medium plus RR/tracking_linked_with_features_20.0_fps_1_um_RR.tsv')
-output_fig = os.path.expanduser('~/Downloads/fig2_RR_speed.pdf')
+filenames = ('0.4 mM EGTA vs control/tracking_linked_with_features_20.0_fps_1_um_control.tsv',
+             '0.38 mM vs. 0.37 mM vs. 0.32 mM EGTA/tracking_linked_with_features_20.0_fps_1_um_032.tsv',
+             '0.38 mM vs. 0.37 mM vs. 0.32 mM EGTA/tracking_linked_with_features_20.0_fps_1_um_037.tsv',
+             '0.38 mM vs. 0.37 mM vs. 0.32 mM EGTA/tracking_linked_with_features_20.0_fps_1_um_038.tsv',
+             '0.4 mM EGTA vs control/tracking_linked_with_features_20.0_fps_1_um_04.tsv')
 
-figsize = (1.5, 2)
+filenames = [os.path.join(data_path, 'Dynamics/Log cells in culture medium plus EGTA', filename) for filename in filenames]
 
-# Read data
-data_control = magic_load_trajectories(filename_control) # could be a simple read_csv
-data_RR = magic_load_trajectories(filename_RR) # could be a simple read_csv
-fps, _ = guess_fps_and_pixelsize(filename_control)
+output_fig = os.path.expanduser('~/Downloads/fig2_EGTA_speed.pdf')
+
+fps, _ = guess_fps_and_pixelsize(filenames[0])
 print('FPS =', fps, 'Hz')
 dt = 1/fps
+
+figsize = (1.5, 2)
 
 # Plot
 fig, ax = plt.subplots(figsize=figsize)
@@ -27,10 +30,15 @@ ax.spines['top'].set_visible(False)
 ax.spines["left"].set_visible(False)
 ax.yaxis.set_visible(False)
 
-for data, color in ((data_control, 'k'), (data_RR, '#1b9e77')):
-    selection = data[(data['frame']*dt>60*60) & (data['frame']*dt<65*60)]
+colors = plt.cm.viridis(np.linspace(0.05, 0.9, 5))
+
+for filename, color in zip(filenames, colors):
+    # Read data
+    print("Reading", filename)
+    data = magic_load_trajectories(filename)  # could be a simple read_csv
+    selection = data[(data['frame']*dt>55*60) & (data['frame']*dt<60*60)]
     speed = data['speed']/dt
-    ax.hist(speed[speed<1200.], bins=100, color=color, histtype='step', lw=1.5, density=True)
+    ax.hist(speed[speed<1500.], bins=100, color=color, histtype='step', lw=1.5, density=True)
 
 #ax.set_xlim(0, 1250)
 ax.set_xlabel('Speed ($\mu$m/s)')
