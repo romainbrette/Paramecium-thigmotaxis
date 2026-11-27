@@ -24,7 +24,7 @@ dt = 1/fps
 # Plot
 fig, (ax_hist, ax) = plt.subplots(
     2, 1, sharex=True, figsize=figsize,
-    gridspec_kw={'height_ratios': [1.5, 3], 'hspace': 0.1},
+    gridspec_kw={'height_ratios': [1, 1], 'hspace': 0.1},
     layout='constrained'
 )
 ax.spines['right'].set_visible(False)
