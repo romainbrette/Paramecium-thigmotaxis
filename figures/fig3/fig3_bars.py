@@ -1,6 +1,8 @@
 '''
 Maximum attachment in log. vs. stationary, glass vs. Petri.
 Compared with bacterized and filtered medium.
+
+TODO: there's an error in the background count of the filtered experiment.
 '''
 from figures.figures import *
 import os
